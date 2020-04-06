@@ -63,15 +63,20 @@
     rjmp INICIO           ; O vetor de reinício: pula para “main”
       ;***coloque suas variáveis e declarações aqui***   
 	;Exemplo: 
-	
+	.def	temp	=r16
  
 INICIO:
       ;***código principal vai aqui, inicializações e etc...***
-	 
+	  ldi	temp,0x0f ;0b00001111
+	  out	ddrb,temp
+	  
+	  ldi	r17, 0x00
+	  ldi 	r18, 0x11
 	  
 LOOP:
       ;*** rotinas de repetição ***
-	  
+	  out 	portb,r18
+	  out	portb,r17
 	  
    rjmp LOOP                 
       ;***seus procedimentos de atuação finitas vão aqui aqui o  programa vai finalizar no final***
