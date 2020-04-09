@@ -7,16 +7,15 @@
 
 
 ;  /===============================================================================\
-; | Projeto:  TÍTULO																|	
+; | Projeto: TP-06														         	|	
 ; |																					|
-; | Autor: NOME DO ESTUDANTE AQUI													|
-; | Idioma: NOME DA LÍNGUA EM QUE O PROGRAMA ESTÁ ESCRITO E							|
-; |			O NOME DO COMPILADOR USADO PARA COMPILÁ-LO QUANDO FOI TESTADO			|
+; | Autor: Luiza Cariani Araujo													    |
+; | Idioma: Assemble e AVRASM2.exe			                                        |
 ; | Solução: NOME DA SUA SOLUÇÃO ATMEL STUDIO 7 (Template neste exemplo)			|
 ; |																					|
 ; | Projetos: AssemblerTargetTeamplate												|
 ; |																					|
-; | Para compilar: Explique como compilar este programa	                            |
+; | Para compilar: coloque no Git bash e inicie o compilador AVRASM2.exe            |
 ; |																					|
 ; |Exemplo: Para compilar este código, deverá ter o compilador AVRASM2.exe (windows)|
 ; | no prompt de comando (MS-DOS):													|
@@ -29,32 +28,22 @@
 ; |						 -W+ie  -d "Debug\Teamplate.obj"							|
 ; |						 main.asm													|
 ; |																					|
-; | Software: NOME E TÍTULO DA CLASSE PARA QUE ESTE PROGRAMA FOI ESCRITO			|
+; | Software: Visual Studio			                                                |
 ; |																					|
-; | Versão do SO: SEU NÚMERO DE VERSÃO DO PROGRAMA DE COMPUTADOR					|
-; |																					|
-; | Plataforma: SEU PROGRAMA DE COMPUTADOR											|
-; |																					|
-; | Instrutor: NOME DO INSTRUTOR DO SEU CURSO										|
-; |																					|
-; | Data de vencimento: DATA E HORA EM QUE ESTE PROGRAMA É / DEVIA SER				|
-; | SUBMETIDO																		|
+; |															                     	|
 ; |																					|
 ; + --------------------------------------------------------------------------------+
 ; |																					|
-; | Descrição: DESCREVA O PROBLEMA DE QUE ESTE PROGRAMA FOI ESCRITO RESOLVER.		|
+; | 	                                                                            |
 ; |																					|
-; | Entrada: DESCREVA A ENTRADA QUE O PROGRAMA EXIGE.								|
+; |  							                                                    |
 ; |																					|
-; | Saída: DESCREVA A SAÍDA QUE O PROGRAMA PRODUZ.									|
+; |  							                                                	|
 ; |																					|
-; | Algoritmo: ESBOÇO DA ABORDAGEM USADA PELO PROGRAMA PARA RESOLVER O PROBLEMA.	|
+; |                                                                             	|
 ; |																					|
-; | Recursos necessários não incluídos: DESCREVA AQUI QUALQUER REQUISITO DE			|
-; | A tarefa que o programa não tenta resolver.										|
-; |																					|
-; | Erros conhecidos: SE O PROGRAMA NÃO FUNCIONAR CORRETAMENTE EM ALGUNS			|
-; |					  SITUAÇÕES, DESCREVA AS SITUAÇÕES E PROBLEMAS AQUI.			|
+; |  		                                                                    	|
+; |                                                                     			|
 ; |																					|
 ;  \===============================================================================/
 
@@ -67,18 +56,17 @@
 ;============
 ;Declarações:
 
-
-
 .ORG 0x0000              ; instrução inicial, é onde se inicia a memória de programa
     rjmp INICIO           ; O vetor de reinício: pula para “main”
       ;***coloque suas variáveis e declarações aqui***   
-	;Exemplo: 
-	;.def	temp	=r16
- 
+ DDRB = 0x3F; 
+ldi r24, 0x3F ; 
+out 0x04, r24 ; 
 INICIO:
       ;***código principal vai aqui, inicializações e etc...***
-LOOP:
+
       ;*** rotinas de repetição ***
+      DDRB; 
    rjmp LOOP                 
       ;***seus procedimentos de atuação finitas vão aqui aqui o  programa vai finalizar no final***
 .EXIT 
