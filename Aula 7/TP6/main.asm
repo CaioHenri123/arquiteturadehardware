@@ -9,14 +9,13 @@
 ;  /===============================================================================\
 ; | Projeto:  TÍTULO																|	
 ; |																					|
-; | Autor: NOME DO ESTUDANTE AQUI													|
-; | Idioma: NOME DA LÍNGUA EM QUE O PROGRAMA ESTÁ ESCRITO E							|
-; |			O NOME DO COMPILADOR USADO PARA COMPILÁ-LO QUANDO FOI TESTADO			|
+; | Autor: Rodrigo Gradela da Graça Ra:146326													|
+; | Idioma: ASSEMBLY e AVRASM2.exe			|
 ; | Solução: NOME DA SUA SOLUÇÃO ATMEL STUDIO 7 (Template neste exemplo)			|
 ; |																					|
 ; | Projetos: AssemblerTargetTeamplate												|
 ; |																					|
-; | Para compilar: Explique como compilar este programa	                            |
+; | Para compilar: Através compilador AVRASM2.exe                         |
 ; |																					|
 ; |Exemplo: Para compilar este código, deverá ter o compilador AVRASM2.exe (windows)|
 ; | no prompt de comando (MS-DOS):													|
@@ -29,33 +28,15 @@
 ; |						 -W+ie  -d "Debug\Teamplate.obj"							|
 ; |						 main.asm													|
 ; |																					|
-; | Software: NOME E TÍTULO DA CLASSE PARA QUE ESTE PROGRAMA FOI ESCRITO			|
+; | Software: Atmel Studio 7.0			|
 ; |																					|
-; | Versão do SO: SEU NÚMERO DE VERSÃO DO PROGRAMA DE COMPUTADOR					|
+; | Versão do SO: versão de entrega do tp6					|
 ; |																					|
-; | Plataforma: SEU PROGRAMA DE COMPUTADOR											|
-; |																					|
-; | Instrutor: NOME DO INSTRUTOR DO SEU CURSO										|
-; |																					|
-; | Data de vencimento: DATA E HORA EM QUE ESTE PROGRAMA É / DEVIA SER				|
-; | SUBMETIDO																		|
+
+; | Instrutor: Sergio Schina									|
 ; |																					|
 ; + --------------------------------------------------------------------------------+
-; |																					|
-; | Descrição: DESCREVA O PROBLEMA DE QUE ESTE PROGRAMA FOI ESCRITO RESOLVER.		|
-; |																					|
-; | Entrada: DESCREVA A ENTRADA QUE O PROGRAMA EXIGE.								|
-; |																					|
-; | Saída: DESCREVA A SAÍDA QUE O PROGRAMA PRODUZ.									|
-; |																					|
-; | Algoritmo: ESBOÇO DA ABORDAGEM USADA PELO PROGRAMA PARA RESOLVER O PROBLEMA.	|
-; |																					|
-; | Recursos necessários não incluídos: DESCREVA AQUI QUALQUER REQUISITO DE			|
-; | A tarefa que o programa não tenta resolver.										|
-; |																					|
-; | Erros conhecidos: SE O PROGRAMA NÃO FUNCIONAR CORRETAMENTE EM ALGUNS			|
-; |					  SITUAÇÕES, DESCREVA AS SITUAÇÕES E PROBLEMAS AQUI.			|
-; |																					|
+; |																			
 ;  \===============================================================================/
 
 
@@ -73,12 +54,34 @@
     rjmp INICIO           ; O vetor de reinício: pula para “main”
       ;***coloque suas variáveis e declarações aqui***   
 	;Exemplo: 
-	;.def	temp	=r16
+	.def	temp	=r16
+
  
 INICIO:
-      ;***código principal vai aqui, inicializações e etc...***
+DDRA = 0b11111111;
+DDRB = 0b11111111;   
+DDRC = 0b11111111;
+DDRD = 0b11111111;            
+
 LOOP:
       ;*** rotinas de repetição ***
+PORTA=0b11111111;
+delay_ms(500);
+PORTA=0b00000000;
+delay_ms(500);
+PORTB=0b11111111;
+delay_ms(500);
+PORTB=0b00000000;
+delay_ms(500);
+PORTC=0b11111111;
+delay_ms(500);
+PORTC=0b00000000;
+delay_ms(500);
+PORTD=0b11111111;
+delay_ms(500);
+PORTD=0b00000000;
+
+
    rjmp LOOP                 
       ;***seus procedimentos de atuação finitas vão aqui aqui o  programa vai finalizar no final***
 .EXIT 
