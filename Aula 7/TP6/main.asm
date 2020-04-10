@@ -1,5 +1,5 @@
 ; TP-06:
-;Usando o template em assembly, declare a todas as portas como saida, e faÁa cada uma delas alternarem de estado dentro de um loop infinito;
+;Usando o template em assembly, declare a todas as portas como saida, e fa√ßa cada uma delas alternarem de estado dentro de um loop infinito;
 
 
 
@@ -7,18 +7,17 @@
 
 
 ;  /===============================================================================\
-; | Projeto:  TÕTULO																|	
+; | Projeto:  T√çTULO																|	
 ; |																					|
-; | Autor: NOME DO ESTUDANTE AQUI													|
-; | Idioma: NOME DA LÕNGUA EM QUE O PROGRAMA EST¡ ESCRITO E							|
-; |			O NOME DO COMPILADOR USADO PARA COMPIL¡-LO QUANDO FOI TESTADO			|
-; | SoluÁ„o: NOME DA SUA SOLU«√O ATMEL STUDIO 7 (Template neste exemplo)			|
+; | Autor: Marcelo Patricio Ra:143769													|
+; | Idioma: ASSEMBLY e AVRASM2.exe			|
+; | Solu√ß√£o: NOME DA SUA SOLU√á√ÉO ATMEL STUDIO 7 (Template neste exemplo)			|
 ; |																					|
 ; | Projetos: AssemblerTargetTeamplate												|
 ; |																					|
-; | Para compilar: Explique como compilar este programa	                            |
+; | Para compilar: Atrav√©s compilador AVRASM2.exe                         |
 ; |																					|
-; |Exemplo: Para compilar este cÛdigo, dever· ter o compilador AVRASM2.exe (windows)|
+; |Exemplo: Para compilar este c√≥digo, dever√° ter o compilador AVRASM2.exe (windows)|
 ; | no prompt de comando (MS-DOS):													|
 ; |																					|
 ; |      avrasm2.exe -fI -o "Teamplate.hex"											|
@@ -29,56 +28,58 @@
 ; |						 -W+ie  -d "Debug\Teamplate.obj"							|
 ; |						 main.asm													|
 ; |																					|
-; | Software: NOME E TÕTULO DA CLASSE PARA QUE ESTE PROGRAMA FOI ESCRITO			|
+; | Software: Atmel Studio 7.0			|
 ; |																					|
-; | Vers„o do SO: SEU N⁄MERO DE VERS√O DO PROGRAMA DE COMPUTADOR					|
+; | Vers√£o do SO: vers√£o de entrega do tp6					|
 ; |																					|
-; | Plataforma: SEU PROGRAMA DE COMPUTADOR											|
-; |																					|
-; | Instrutor: NOME DO INSTRUTOR DO SEU CURSO										|
-; |																					|
-; | Data de vencimento: DATA E HORA EM QUE ESTE PROGRAMA … / DEVIA SER				|
-; | SUBMETIDO																		|
+
+; | Instrutor: Sergio Schina									|
 ; |																					|
 ; + --------------------------------------------------------------------------------+
-; |																					|
-; | DescriÁ„o: DESCREVA O PROBLEMA DE QUE ESTE PROGRAMA FOI ESCRITO RESOLVER.		|
-; |																					|
-; | Entrada: DESCREVA A ENTRADA QUE O PROGRAMA EXIGE.								|
-; |																					|
-; | SaÌda: DESCREVA A SAÕDA QUE O PROGRAMA PRODUZ.									|
-; |																					|
-; | Algoritmo: ESBO«O DA ABORDAGEM USADA PELO PROGRAMA PARA RESOLVER O PROBLEMA.	|
-; |																					|
-; | Recursos necess·rios n„o incluÌdos: DESCREVA AQUI QUALQUER REQUISITO DE			|
-; | A tarefa que o programa n„o tenta resolver.										|
-; |																					|
-; | Erros conhecidos: SE O PROGRAMA N√O FUNCIONAR CORRETAMENTE EM ALGUNS			|
-; |					  SITUA«’ES, DESCREVA AS SITUA«’ES E PROBLEMAS AQUI.			|
-; |																					|
+; |																			
 ;  \===============================================================================/
 
 
-.INCLUDE "atmega328p.inc"  ; seu arquivo principal de mapeamento das vari·veis   
+.INCLUDE "atmega328p.inc"  ; seu arquivo principal de mapeamento das vari√°veis   
 .device		atmega328P
 .nolist
 .list
 
 ;============
-;DeclaraÁıes:
+;Declara√ß√µes:
 
 
 
-.ORG 0x0000              ; instruÁ„o inicial, È onde se inicia a memÛria de programa
-    rjmp INICIO           ; O vetor de reinÌcio: pula para ìmainî
-      ;***coloque suas vari·veis e declaraÁıes aqui***   
+.ORG 0x0000              ; instru√ß√£o inicial, √© onde se inicia a mem√≥ria de programa
+    rjmp INICIO           ; O vetor de rein√≠cio: pula para ‚Äúmain‚Äù
+      ;***coloque suas vari√°veis e declara√ß√µes aqui***   
 	;Exemplo: 
-	;.def	temp	=r16
+	.def	tempb =r16
+        
+	
+
  
 INICIO:
-      ;***cÛdigo principal vai aqui, inicializaÁıes e etc...***
-LOOP:
-      ;*** rotinas de repetiÁ„o ***
+.INCLUDE "atmega328p.inc"
+.device		atmega328P
+.nolist
+.list
+.ORG 0x0000
+	rjmp start
+	
+start:
+	ldi r16, 0xFF
+	out ddrb, r16 ; all ports b output
+	ldi r18, 0x00 ; ALL LOW
+	
+loop:
+	out portb, r16		; portb -> high
+	out portb, r18		; portb -> low
+rjmp LOOP                 
+
+
+
+
    rjmp LOOP                 
-      ;***seus procedimentos de atuaÁ„o finitas v„o aqui aqui o  programa vai finalizar no final***
+      ;***seus procedimentos de atua√ß√£o finitas v√£o aqui aqui o  programa vai finalizar no final***
 .EXIT 
