@@ -1,5 +1,5 @@
 ; TP-06:
-;Usando o template em assembly, declare a todas as portas como saida, e faÁa cada uma delas alternarem de estado dentro de um loop infinito;
+;Usando o template em assembly, declare a todas as portas como saida, e fa√ßa cada uma delas alternarem de estado dentro de um loop infinito;
 
 
 
@@ -7,17 +7,17 @@
 
 
 ;  /===============================================================================\
-; | Projeto:  TÕTULO																|	
+; | Projeto:  T√çTULO																|	
 ; |																					|
-; | Autor: Rodrigo Gradela da GraÁa Ra:146326													|
+; | Autor: Rodrigo Gradela da Gra√ßa Ra:146326													|
 ; | Idioma: ASSEMBLY e AVRASM2.exe			|
-; | SoluÁ„o: NOME DA SUA SOLU«√O ATMEL STUDIO 7 (Template neste exemplo)			|
+; | Solu√ß√£o: NOME DA SUA SOLU√á√ÉO ATMEL STUDIO 7 (Template neste exemplo)			|
 ; |																					|
 ; | Projetos: AssemblerTargetTeamplate												|
 ; |																					|
-; | Para compilar: AtravÈs compilador AVRASM2.exe                         |
+; | Para compilar: Atrav√©s compilador AVRASM2.exe                         |
 ; |																					|
-; |Exemplo: Para compilar este cÛdigo, dever· ter o compilador AVRASM2.exe (windows)|
+; |Exemplo: Para compilar este c√≥digo, dever√° ter o compilador AVRASM2.exe (windows)|
 ; | no prompt de comando (MS-DOS):													|
 ; |																					|
 ; |      avrasm2.exe -fI -o "Teamplate.hex"											|
@@ -30,7 +30,7 @@
 ; |																					|
 ; | Software: Atmel Studio 7.0			|
 ; |																					|
-; | Vers„o do SO: vers„o de entrega do tp6					|
+; | Vers√£o do SO: vers√£o de entrega do tp6					|
 ; |																					|
 
 ; | Instrutor: Sergio Schina									|
@@ -40,21 +40,24 @@
 ;  \===============================================================================/
 
 
-.INCLUDE "atmega328p.inc"  ; seu arquivo principal de mapeamento das vari·veis   
+.INCLUDE "atmega328p.inc"  ; seu arquivo principal de mapeamento das vari√°veis   
 .device		atmega328P
 .nolist
 .list
 
 ;============
-;DeclaraÁıes:
+;Declara√ß√µes:
 
 
 
-.ORG 0x0000              ; instruÁ„o inicial, È onde se inicia a memÛria de programa
-    rjmp INICIO           ; O vetor de reinÌcio: pula para ìmainî
-      ;***coloque suas vari·veis e declaraÁıes aqui***   
+.ORG 0x0000              ; instru√ß√£o inicial, √© onde se inicia a mem√≥ria de programa
+    rjmp INICIO           ; O vetor de rein√≠cio: pula para ‚Äúmain‚Äù
+      ;***coloque suas vari√°veis e declara√ß√µes aqui***   
 	;Exemplo: 
-	.def	temp	=r16
+	.def	DDRA	=r16
+	.def	DDRB	=r23
+	.def	DDRC	=r24
+	.def	DDRD	=r25
 
  
 INICIO:
@@ -64,7 +67,7 @@ DDRC = 0b11111111;
 DDRD = 0b11111111;            
 
 LOOP:
-      ;*** rotinas de repetiÁ„o ***
+      ;*** rotinas de repeti√ß√£o ***
 PORTA=0b11111111;
 delay_ms(500);
 PORTA=0b00000000;
@@ -83,5 +86,5 @@ PORTD=0b00000000;
 
 
    rjmp LOOP                 
-      ;***seus procedimentos de atuaÁ„o finitas v„o aqui aqui o  programa vai finalizar no final***
+      ;***seus procedimentos de atua√ß√£o finitas v√£o aqui aqui o  programa vai finalizar no final***
 .EXIT 
