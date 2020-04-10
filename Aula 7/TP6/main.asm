@@ -1,5 +1,5 @@
 ; TP-06:
-;Usando o template em assembly, declare a todas as portas como saida, e faça cada uma delas alternarem de estado dentro de um loop infinito;
+;Usando o template em assembly, declare a todas as portas como saida, e faï¿½a cada uma delas alternarem de estado dentro de um loop infinito;
 
 
 
@@ -7,18 +7,18 @@
 
 
 ;  /===============================================================================\
-; | Projeto:  TÍTULO																|	
+; | Projeto:  Tï¿½TULO																|	
 ; |																					|
-; | Autor: NOME DO ESTUDANTE AQUI													|
-; | Idioma: NOME DA LÍNGUA EM QUE O PROGRAMA ESTÁ ESCRITO E							|
-; |			O NOME DO COMPILADOR USADO PARA COMPILÁ-LO QUANDO FOI TESTADO			|
-; | Solução: NOME DA SUA SOLUÇÃO ATMEL STUDIO 7 (Template neste exemplo)			|
+; | Autor: Robson Lucas Silveira Mello													|
+; | Idioma: NOME DA Lï¿½NGUA EM QUE O PROGRAMA ESTï¿½ ESCRITO E							|
+; |			O NOME DO COMPILADOR USADO PARA COMPILï¿½-LO QUANDO FOI TESTADO			|
+; | Soluï¿½ï¿½o: NOME DA SUA SOLUï¿½ï¿½O ATMEL STUDIO 7 (Template neste exemplo)			|
 ; |																					|
 ; | Projetos: AssemblerTargetTeamplate												|
 ; |																					|
 ; | Para compilar: Explique como compilar este programa	                            |
 ; |																					|
-; |Exemplo: Para compilar este código, deverá ter o compilador AVRASM2.exe (windows)|
+; |Exemplo: Para compilar este cï¿½digo, deverï¿½ ter o compilador AVRASM2.exe (windows)|
 ; | no prompt de comando (MS-DOS):													|
 ; |																					|
 ; |      avrasm2.exe -fI -o "Teamplate.hex"											|
@@ -29,56 +29,123 @@
 ; |						 -W+ie  -d "Debug\Teamplate.obj"							|
 ; |						 main.asm													|
 ; |																					|
-; | Software: NOME E TÍTULO DA CLASSE PARA QUE ESTE PROGRAMA FOI ESCRITO			|
+; | Software: NOME E Tï¿½TULO DA CLASSE PARA QUE ESTE PROGRAMA FOI ESCRITO			|
 ; |																					|
-; | Versão do SO: SEU NÚMERO DE VERSÃO DO PROGRAMA DE COMPUTADOR					|
+; | Versï¿½o do SO: SEU Nï¿½MERO DE VERSï¿½O DO PROGRAMA DE COMPUTADOR					|
 ; |																					|
 ; | Plataforma: SEU PROGRAMA DE COMPUTADOR											|
 ; |																					|
 ; | Instrutor: NOME DO INSTRUTOR DO SEU CURSO										|
 ; |																					|
-; | Data de vencimento: DATA E HORA EM QUE ESTE PROGRAMA É / DEVIA SER				|
+; | Data de vencimento: DATA E HORA EM QUE ESTE PROGRAMA ï¿½ / DEVIA SER				|
 ; | SUBMETIDO																		|
 ; |																					|
 ; + --------------------------------------------------------------------------------+
 ; |																					|
-; | Descrição: DESCREVA O PROBLEMA DE QUE ESTE PROGRAMA FOI ESCRITO RESOLVER.		|
+; | Descriï¿½ï¿½o: DESCREVA O PROBLEMA DE QUE ESTE PROGRAMA FOI ESCRITO RESOLVER.		|
 ; |																					|
 ; | Entrada: DESCREVA A ENTRADA QUE O PROGRAMA EXIGE.								|
 ; |																					|
-; | Saída: DESCREVA A SAÍDA QUE O PROGRAMA PRODUZ.									|
+; | Saï¿½da: DESCREVA A SAï¿½DA QUE O PROGRAMA PRODUZ.									|
 ; |																					|
-; | Algoritmo: ESBOÇO DA ABORDAGEM USADA PELO PROGRAMA PARA RESOLVER O PROBLEMA.	|
+; | Algoritmo: ESBOï¿½O DA ABORDAGEM USADA PELO PROGRAMA PARA RESOLVER O PROBLEMA.	|
 ; |																					|
-; | Recursos necessários não incluídos: DESCREVA AQUI QUALQUER REQUISITO DE			|
-; | A tarefa que o programa não tenta resolver.										|
+; | Recursos necessï¿½rios nï¿½o incluï¿½dos: DESCREVA AQUI QUALQUER REQUISITO DE			|
+; | A tarefa que o programa nï¿½o tenta resolver.										|
 ; |																					|
-; | Erros conhecidos: SE O PROGRAMA NÃO FUNCIONAR CORRETAMENTE EM ALGUNS			|
-; |					  SITUAÇÕES, DESCREVA AS SITUAÇÕES E PROBLEMAS AQUI.			|
+; | Erros conhecidos: SE O PROGRAMA Nï¿½O FUNCIONAR CORRETAMENTE EM ALGUNS			|
+; |					  SITUAï¿½ï¿½ES, DESCREVA AS SITUAï¿½ï¿½ES E PROBLEMAS AQUI.			|
 ; |																					|
 ;  \===============================================================================/
 
 
-.INCLUDE "atmega328p.inc"  ; seu arquivo principal de mapeamento das variáveis   
+.INCLUDE "atmega328p.inc"  ; seu arquivo principal de mapeamento das variï¿½veis   
 .device		atmega328P
 .nolist
 .list
 
 ;============
-;Declarações:
+;Declaraï¿½ï¿½es:
 
 
 
-.ORG 0x0000              ; instrução inicial, é onde se inicia a memória de programa
-    rjmp INICIO           ; O vetor de reinício: pula para “main”
-      ;***coloque suas variáveis e declarações aqui***   
+.ORG 0x0000              ; instruï¿½ï¿½o inicial, ï¿½ onde se inicia a memï¿½ria de programa
+    rjmp INICIO           ; O vetor de reinï¿½cio: pula para ï¿½mainï¿½
+      ;***coloque suas variï¿½veis e declaraï¿½ï¿½es aqui***   
 	;Exemplo: 
 	;.def	temp	=r16
  
 INICIO:
-      ;***código principal vai aqui, inicializações e etc...***
+      ;***cï¿½digo principal vai aqui, inicializaï¿½ï¿½es e etc...***
+      ;Os pinos I/O do atmega328p apenas funcionam com registradores do range de 0x00 a 0x1F
+      ;portas declaradas
+      ldi r16, 0x00
+      ldi r17, 0x01
+      ldi r18, 0x02
+      ldi r19, 0x03
+      ldi r20, 0x04
+      ldi r21, 0x05
+      ldi r22, 0x06
+      ldi r23, 0x07
+      ldi r24, 0x08
+      ldi r25, 0x09
+      ldi r26, 0x0a
+      ldi r27, 0x0b
+      ldi r28, 0x0c
+      ldi r29, 0x0d
+      ldi r30, 0x0e
+      ldi r31, 0x0f
+      ;setadas como saÃ­da
+      out port0, r16
+      out port1, r17
+      out port2, r18
+      out port3, r19
+      out port4, r20
+      out port5, r21
+      out port6, r21
+      out port7, r23
+      out port8, r24
+      out port9, r25
+      out porta, r26
+      out portb, r27
+      out portc, r28
+      out portd, r29
+      out porte, r30
+      out portf, r31
 LOOP:
-      ;*** rotinas de repetição ***
+      ;alternou para entrada
+      in port0, r16
+      in port1, r17
+      in port2, r18
+      in port3, r19
+      in port4, r20
+      in port5, r21
+      in port6, r21
+      in port7, r23
+      in port8, r24
+      in port9, r25
+      in porta, r26
+      in portb, r27
+      in portc, r28
+      in portd, r29
+      in porte, r30
+      ;alternou para saÃ­da
+      out port0, r16
+      out port1, r17
+      out port2, r18
+      out port3, r19
+      out port4, r20
+      out port5, r21
+      out port6, r21
+      out port7, r23
+      out port8, r24
+      out port9, r25
+      out porta, r26
+      out portb, r27
+      out portc, r28
+      out portd, r29
+      out porte, r30
+
    rjmp LOOP                 
-      ;***seus procedimentos de atuação finitas vão aqui aqui o  programa vai finalizar no final***
+      ;***seus procedimentos de atuaï¿½ï¿½o finitas vï¿½o aqui aqui o  programa vai finalizar no final***
 .EXIT 
