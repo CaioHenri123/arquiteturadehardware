@@ -54,48 +54,39 @@
     rjmp INICIO           ; O vetor de reinício: pula para “main”
       ;***coloque suas variáveis e declarações aqui***   
 	;Exemplo: 
-	.def	pa =r16
-	.def	pb =r23
-	.def	pc =r24
-	.def	pd =r25
+	.def	tempb =r16
+        .def	tempc =r19
+        .def    tempd =r22
+	
 
  
 INICIO:
-LDI pa,0b11111111;
-OUT DDRA,pa;
-LDI PB,0b11111111;   
-OUT DDRB,pb;
-LDI pc,0b11111111;
-OUT DDRC,pc;
-LDI pd,0b11111111;
-OUT DDRD,pd;
+ldi tempb,0xff; 0b11111111
+out ddrb,tempb
+
+ldi r17,0x00
+ldi r18,0xff
+
+ldi tempc,0xff; 0b11111111
+out ddrc,tempc
+
+ldi r20,0x00
+ldi r21,0xff
+
+ldi tempd,0xff; 0b11111111
+out ddrd,tempd
+
+ldi r23,0x00
+ldi r24,0xff
 
 LOOP:
       ;*** rotinas de repetição ***
-LDI pa,0x00;
-OUT PORTA,pa;
-delay_ms(500);
-LDI pa,0xFF;
-OUT PORTA,pa;
-delay_ms(500);
-LDI pb,0x00;
-OUT PORTB,pb;
-delay_ms(500);
-LDI pb,0xFF;
-OUT PORTB,pb;
-delay_ms(500);
-LDI pc,0x00;
-OUT PORTC,pc;
-delay_ms(500);
-LDI pc,0xFF;
-OUT PORTC,pc;
-delay_ms(500);
-LDI pd,0x00;
-OUT PORTD,pa;
-delay_ms(500);
-LDI pd,0xFF;
-OUT PORTD,pd;
-delay_ms(500);
+out portb,r17
+out portb,r18
+out portc,r20
+out portc,r21
+out portd,r23
+out portd,r24
 
 
 
