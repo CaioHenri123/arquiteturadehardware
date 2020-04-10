@@ -12,10 +12,9 @@
 start:
 	ldi r16, 0xFF
 	out ddrb, r16 ; all ports b output
-	ldi r17, 0xFF ; ALL HIGH
 	ldi r18, 0x00 ; ALL LOW
 	
 loop:
-	out portb, r17		; portb -> high
+	out portb, r16		; portb -> high
 	out portb, r18		; portb -> low
 rjmp LOOP                 
