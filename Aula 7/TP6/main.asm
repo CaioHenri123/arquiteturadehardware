@@ -54,35 +54,49 @@
     rjmp INICIO           ; O vetor de reinício: pula para “main”
       ;***coloque suas variáveis e declarações aqui***   
 	;Exemplo: 
-	.def	DDRA	=r16
-	.def	DDRB	=r23
-	.def	DDRC	=r24
-	.def	DDRD	=r25
+	.def	pa =r16
+	.def	pb =r23
+	.def	pc =r24
+	.def	pd =r25
 
  
 INICIO:
-DDRA = 0b11111111;
-DDRB = 0b11111111;   
-DDRC = 0b11111111;
-DDRD = 0b11111111;            
+LDI pa,0b11111111;
+OUT DDRA,pa;
+LDI PB,0b11111111;   
+OUT DDRB,pb;
+LDI pc,0b11111111;
+OUT DDRC,pc;
+LDI pd,0b11111111;
+OUT DDRD,pd;
 
 LOOP:
       ;*** rotinas de repetição ***
-PORTA=0b11111111;
+LDI pa,0x00;
+OUT PORTA,pa;
 delay_ms(500);
-PORTA=0b00000000;
+LDI pa,0xFF;
+OUT PORTA,pa;
 delay_ms(500);
-PORTB=0b11111111;
+LDI pb,0x00;
+OUT PORTB,pb;
 delay_ms(500);
-PORTB=0b00000000;
+LDI pb,0xFF;
+OUT PORTB,pb;
 delay_ms(500);
-PORTC=0b11111111;
+LDI pc,0x00;
+OUT PORTC,pc;
 delay_ms(500);
-PORTC=0b00000000;
+LDI pc,0xFF;
+OUT PORTC,pc;
 delay_ms(500);
-PORTD=0b11111111;
+LDI pd,0x00;
+OUT PORTD,pa;
 delay_ms(500);
-PORTD=0b00000000;
+LDI pd,0xFF;
+OUT PORTD,pd;
+delay_ms(500);
+
 
 
    rjmp LOOP                 
