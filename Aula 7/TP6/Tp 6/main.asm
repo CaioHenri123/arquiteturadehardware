@@ -64,21 +64,22 @@
 .nolist
 .list
 
-;============
-;Declarações:
-
-
-
 .ORG 0x0000              ; instrução inicial, é onde se inicia a memória de programa
     rjmp INICIO           ; O vetor de reinício: pula para “main”
-      ;***coloque suas variáveis e declarações aqui***   
-	;Exemplo: 
-	;.def	temp	=r16
- 
+     
 INICIO:
-      ;***código principal vai aqui, inicializações e etc...***
+     ldi r18, 0xff
+	 ldi r16, 0x00
+	 out ddrb, r15
+	 out ddrc, r15
+	 out ddrd, r15
 LOOP:
-      ;*** rotinas de repetição ***
+     out portb, r18
+	 out portc, r18
+	 out portd, r18
+
+	 out portb, r16
+	 out portc, r16
+	 out portd, r16
    rjmp LOOP                 
-      ;***seus procedimentos de atuação finitas vão aqui aqui o  programa vai finalizar no final***
 .EXIT 
