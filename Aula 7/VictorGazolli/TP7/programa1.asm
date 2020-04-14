@@ -23,3 +23,4 @@ start:
 
 	; r17 <- r17 + r18 
 	sub r17, r18 
+.EXIT 
