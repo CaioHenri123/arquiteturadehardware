@@ -1,0 +1,29 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>G:\Meus Documentos\햞ea de Trabalho\AssemblerApplication1\AssemblerApplication1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>G:/Program Files\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc</DIR>
+  <DIR>G:\Program Files\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>G:\Meus Documentos\햞ea de Trabalho\AssemblerApplication1\AssemblerApplication1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>G:/Program Files\7.0\Packs\atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc</FILE>
+  <FILE>G:\Meus Documentos\햞ea de Trabalho\AssemblerApplication1\AssemblerApplication1\atmega328p.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>G:\Meus Documentos\햞ea de Trabalho\AssemblerApplication1\AssemblerApplication1\Debug\AssemblerApplication1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>AssemblerApplication1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>AssemblerApplication1.map</FILE>
+  <FILE>AssemblerApplication1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>G:\Meus Documentos\햞ea de Trabalho\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>12</LINE></start>
+  <loop><FILE>G:\Meus Documentos\햞ea de Trabalho\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>17</LINE></loop>
+ </LABELS>
+</ASSEMBLER_INFO>
