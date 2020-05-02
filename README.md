@@ -1,7 +1,7 @@
 # Arquitetura de Hardware
 Neste repositório será tratado todos os conteúdos de programação dado na disciplina de arquitetura de hardware
 
-## Aula 7
+## Aula 6
 
 * MSB e LSB
 * Big-Endian, Little-Endian
@@ -16,7 +16,7 @@ Neste repositório será tratado todos os conteúdos de programação dado na di
 * Stack Pointer
 * Status Register
 
-## Aula 8
+## Aula 7
 
 * Revisão da aula 7
 * Sintaxe da linguagem assembler
@@ -26,7 +26,7 @@ Neste repositório será tratado todos os conteúdos de programação dado na di
 * Exemplo 1,2,3
 
 
-## Aula 9
+## Aula 8
 
 * Breve revisão da Aula 8
 * Complemento de 1
