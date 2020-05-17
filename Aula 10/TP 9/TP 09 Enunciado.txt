@@ -1,0 +1,4 @@
+1.Utilizando o programa de simulação SimulIDE, desenvolva um circuito eletrônico onde deve conter um botão que, quando pressionado, apresenta valor 1 (ou 3,3V) e quando não pressionado apresenta 0 Volts (considere a utilização de resistores). O circuito deverá entrar em uma porta digital do microcontrolador (atmega328, poderá ser o kit arduino UNO ou o microcontrolador diretamente) e deverá ter uma outra porta configurada como saída para poder sinalizar a lógica invertida (em relação a lógica lida pela entradaDeverá ser desenvolvido um firmware em assembly, configurando uma porta de entrada para ler o valor lógico do circuito, em outra porta deverá apresentar o seu valor  lógico de forma invertida, através de um LED ou osciloscópio.
+
+
+2.Desenvolver um firmware em assembly, criando uma label chamada delay, de 0,001 e 1 segundo. Atente-se ao clock, o padrão é 1Mhz, pesquise como alterar o clock do microcontrolador utilizando , e altere para 20Mhz.
